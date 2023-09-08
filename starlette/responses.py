@@ -72,7 +72,7 @@ class Response:
         content_type = self.media_type
         if content_type is not None and populate_content_type:
             if content_type.startswith("text/"):
-                content_type += "; charset=" + self.charset
+                content_type = content_type
             raw_headers.append((b"content-type", content_type.encode("latin-1")))
 
         self.raw_headers = raw_headers
